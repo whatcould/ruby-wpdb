@@ -11,10 +11,15 @@ module WPDB
 
     many_to_one :post, key: :comment_post_ID, class: 'WPDB::Post'
     one_to_many :commentmeta, class: 'WPDB::CommentMeta'
+    one_to_many :ratings, class: 'WPDB::MyrpCommentRating'
 
     def validate
       super
       validates_presence [:comment_author, :comment_author_email, :comment_date, :comment_date_gmt, :comment_parent, :comment_approved]
+    end
+
+    def rating
+      ratings.first.try(:[], :value).try(:to_d)
     end
 
     def before_validation

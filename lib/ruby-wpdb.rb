@@ -56,6 +56,7 @@ module WPDB
       require_relative 'ruby-wpdb/postmeta'
       require_relative 'ruby-wpdb/comment'
       require_relative 'ruby-wpdb/commentmeta'
+      require_relative 'ruby-wpdb/myrp_comment_rating'
       require_relative 'ruby-wpdb/link'
       require_relative 'ruby-wpdb/gravityforms'
 
