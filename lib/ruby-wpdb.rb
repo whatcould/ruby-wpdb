@@ -44,6 +44,8 @@ module WPDB
       WPDB.prefix      = prefix || 'wp_'
       WPDB.user_prefix = user_prefix || WPDB.prefix
 
+      Sequel::Model.require_valid_table = false
+
       require_relative 'ruby-wpdb/option'
       require_relative 'ruby-wpdb/user'
       require_relative 'ruby-wpdb/usermeta'
